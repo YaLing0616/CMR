@@ -29,6 +29,7 @@ const styles = {
         height: '100%',
         padding: '0 5% 5% 5%',
         overflow: 'auto',
+        scrollBehavior: 'smooth',
     },
     buyMask: {
         '@media (min-width: 1000px)': {
