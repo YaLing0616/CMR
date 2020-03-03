@@ -1,0 +1,11 @@
+/* .card_shadow {
+    box-shadow: inset 0px 0px 50px 0px #FFFFFF,1px 1px 28px 0px #E6E3E3 !important;
+    -webkit-box-shadow: inset 0px 0px 50px 0px #FFFFFF,1px 1px 28px 0px #E6E3E3 !important;
+    -moz-box-shadow: inset 0px 0px 50px 0px #FFFFFF,1px 1px 28px 0px #E6E3E3 !important;
+    -o-box-shadow: inset 0px 0px 50px 0px #FFFFFF,1px 1px 28px 0px #E6E3E3 !important;
+} */
+
+.MuiCardContent-root{
+    padding: 16px !important;
+}
+

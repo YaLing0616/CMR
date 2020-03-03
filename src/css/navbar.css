@@ -1,0 +1,34 @@
+a {
+    font-size: 18px;
+    font-family: 'PingFangTC';
+    color: #000 !important;
+}
+
+@media (max-width: 960px) { 
+    .navbar {
+        padding: 0;
+    }
+    
+    .navbar-brand {
+        padding: 20px 15px 15px;
+    }
+
+    button:focus {
+        outline: none;
+    }
+    
+    .nav-item {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .nav-item:hover {
+        background-color: #4C5B6C;
+    }
+    
+    .nav-link {
+        padding: 15px 0 15px;
+    }
+}
+
+

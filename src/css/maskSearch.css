@@ -1,0 +1,32 @@
+.MuiOutlinedInput-input {
+    padding: 10px !important;
+}
+
+.MuiOutlinedInput-adornedEnd {
+    padding: 0 !important;
+}
+
+.MuiIconButton-root {
+    margin-bottom: 3px !important;
+    padding: 5px !important;
+}
+
+button:focus {
+    outline: none;
+}
+
+@media (max-width: 960px) { 
+    .MuiOutlinedInput-input {
+        padding: 14px 0 14px 14px !important;
+    }
+
+    .MuiOutlinedInput-adornedEnd {
+        padding-right: 14px !important;
+    }
+
+    .MuiIconButton-root {
+        margin-bottom: 5px !important;
+        padding: 5px !important;
+    }
+}
+
