@@ -17,7 +17,7 @@ export default function configureStore() {
         Reducer,
         composeEnhancers((applyMiddleware(epicMiddleware))),
       );
-
+    console.log(composeEnhancers);
     epicMiddleware.run(Epic);
 
     return store;

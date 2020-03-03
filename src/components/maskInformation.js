@@ -4,6 +4,7 @@ import '../css/maskInformation.css';
 
 import MaskSearch from './maskSearch';
 import DrugStoreList from './drugStoreList';
+import { callbackify } from 'util';
 
 const styles = {
     container: {
@@ -14,6 +15,28 @@ const styles = {
         height: '100%',
         backgroundColor: '#FAFAFA',
     },
+    MaskSearch: {
+        '@media (min-width: 1000px)': {
+            padding: '2% 2% 0 2%',
+        },
+        width: '100%',
+    },
+    MaskSearch: {
+        '@media (min-width: 1000px)': {
+            width: '100%',
+            height: 200,
+        },
+        width: '100%',
+        height: 210,
+    },
+    DrugStoreList: {
+        '@media (min-width: 1000px)': {
+            width: '100%',
+            height: 'calc(100% - 200px)',
+        },
+        width: '100%',
+        height: 'calc(100% - 200px)',
+    },
 };
 
 class maskInformation extends Component {
@@ -21,8 +44,13 @@ class maskInformation extends Component {
         const { classes } = this.props;
         return (
             <div className={classes.container}>
-                <MaskSearch />
-                <DrugStoreList topRef={this.props.topRef} />
+                <div className={classes.MaskSearch}>
+                    <MaskSearch />
+                </div>
+                <div className={classes.DrugStoreList}>
+                    <DrugStoreList topRef={this.props.topRef} />
+                </div>
+                
             </div>
         );
     }

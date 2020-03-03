@@ -19,10 +19,11 @@ const styles = {
     container: {
         '@media (min-width: 1000px)': {
             paddingBottom: '10px',
-            height: '27%',
+            height: '100%',
+            padding: '3% 3% 0 3%',
         },
         width: '100%',
-        height: '30%',
+        height: '100%',
         padding: '3% 5% 0 5%',
     },
     inputflex: {

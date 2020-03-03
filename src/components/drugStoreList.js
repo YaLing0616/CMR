@@ -22,12 +22,12 @@ const styles = {
     container: {
         '@media (min-width: 1000px)': {
             padding: '2%',
-            height: '73%',
+            height: '100%',
             margin: 0,
         },
         width: '100%',
-        height: '70%',
-        padding: '5%',
+        height: '100%',
+        padding: '0 5% 5% 5%',
         overflow: 'auto',
     },
     buyMask: {
