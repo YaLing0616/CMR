@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/CMR/static/css/main.879568b5.chunk.css",
-    "main.js": "/CMR/static/js/main.871d2453.chunk.js",
-    "main.js.map": "/CMR/static/js/main.871d2453.chunk.js.map",
+    "main.js": "/CMR/static/js/main.bddc3540.chunk.js",
+    "main.js.map": "/CMR/static/js/main.bddc3540.chunk.js.map",
     "runtime-main.js": "/CMR/static/js/runtime-main.6a39d6a7.js",
     "runtime-main.js.map": "/CMR/static/js/runtime-main.6a39d6a7.js.map",
     "static/js/2.aace3b7f.chunk.js": "/CMR/static/js/2.aace3b7f.chunk.js",
     "static/js/2.aace3b7f.chunk.js.map": "/CMR/static/js/2.aace3b7f.chunk.js.map",
     "index.html": "/CMR/index.html",
-    "precache-manifest.cca2288a6ff784932da1cf1632a8c968.js": "/CMR/precache-manifest.cca2288a6ff784932da1cf1632a8c968.js",
+    "precache-manifest.056619df911f025b3bbb1e046130cc45.js": "/CMR/precache-manifest.056619df911f025b3bbb1e046130cc45.js",
     "service-worker.js": "/CMR/service-worker.js",
     "static/css/main.879568b5.chunk.css.map": "/CMR/static/css/main.879568b5.chunk.css.map",
     "static/js/2.aace3b7f.chunk.js.LICENSE.txt": "/CMR/static/js/2.aace3b7f.chunk.js.LICENSE.txt",
@@ -21,6 +21,6 @@
     "static/js/runtime-main.6a39d6a7.js",
     "static/js/2.aace3b7f.chunk.js",
     "static/css/main.879568b5.chunk.css",
-    "static/js/main.871d2453.chunk.js"
+    "static/js/main.bddc3540.chunk.js"
   ]
 }
