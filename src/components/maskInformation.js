@@ -4,7 +4,6 @@ import '../css/maskInformation.css';
 
 import MaskSearch from './maskSearch';
 import DrugStoreList from './drugStoreList';
-import { callbackify } from 'util';
 
 const styles = {
     container: {
@@ -14,12 +13,6 @@ const styles = {
         width: '100%',
         height: '100%',
         backgroundColor: '#FAFAFA',
-    },
-    MaskSearch: {
-        '@media (min-width: 1000px)': {
-            padding: '2% 2% 0 2%',
-        },
-        width: '100%',
     },
     MaskSearch: {
         '@media (min-width: 1000px)': {

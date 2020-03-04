@@ -33,7 +33,7 @@ const styles = {
         }
     },
     navBottom: {
-        '@media (max-width: 960px)': {
+        '@media (max-width: 1000px)': {
             marginBottom: 30,
         },
     }

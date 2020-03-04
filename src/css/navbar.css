@@ -4,7 +4,7 @@ a {
     color: #000 !important;
 }
 
-@media (max-width: 960px) { 
+@media (max-width: 1000px) { 
     .navbar {
         padding: 0;
     }
