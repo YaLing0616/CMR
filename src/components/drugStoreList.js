@@ -7,6 +7,7 @@ import '../css/drugStoreList.css';
 import { handleDrugstoreClicked } from '../actions/index';
 
 import buy_mask from '../assets/howtobuymask.jpg';
+import buy_mask1 from '../assets/howtobuymask1.png';
 import ic_stock_full from '../assets/ic_stock_full@2x.png';
 import ic_stock_few from '../assets/ic_stock_few@2x.png';
 import ic_stock_none from '../assets/ic_stock_none@2x.png';
@@ -33,10 +34,11 @@ const styles = {
     },
     buyMask: {
         '@media (min-width: 1000px)': {
-            marginTop: '10px',
+            // marginTop: '10px',
         },
         width: '100%',
         height: 'auto',
+        marginTop: '10px',
     },
     card: {
         width: '100%',
@@ -195,7 +197,10 @@ class drugStoreList extends Component {
             <div className={classes.container} ref={this.props.topRef}>
                 {howToBuyMaskClicked
                     ?
-                    <img src={buy_mask} className={classes.buyMask} alt=""></img>
+                    <div>
+                        <img src={buy_mask} className={classes.buyMask} alt=""></img>
+                        <img src={buy_mask1} className={classes.buyMask} alt=""></img>
+                    </div>
                     :
                     <div>
                         {/* 尚未輸入資料時 */}
