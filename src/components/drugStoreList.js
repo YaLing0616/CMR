@@ -218,77 +218,88 @@ class drugStoreList extends Component {
                         {searchMaskInformationLists.length === 0
                         ? 
                             <div className={classes.nonList}>
-                                <span role="img" aria-label="">❗請輸入要查詢的區域❗</span>
+                                <span role="img" aria-label="">❗請輸入要查詢的區域、地址或藥局❗</span>
                             </div>
                         :
-                            <div className={classes.flex}>
-                                {searchMaskInformationLists.map((item, index) => (
-                                    <Card
-                                        className={classNames(classes.col, classes.card, "card_shadow")}
-                                        key={item.properties.id}
-                                        // onClick={(e) => this.handleClick(item.properties.id, e)}
-                                        onClick={(e) => this.props.handleDrugstoreClicked(item.properties.id, index)}
-                                    >
-                                        <CardContent>
-                                            <div className={classes.flex}>
-                                                <div
-                                                    className={classNames(classes.col,
-                                                        classes.adultMaskQuantity,
-                                                        `${item.properties.mask_adult > 50 && classes.fullMask}`,
-                                                        `${item.properties.mask_adult <= 50 && item.properties.mask_adult > 0 && classes.fewMask}`,
-                                                        `${item.properties.mask_adult === 0 && classes.emptyMask}`)
-                                                    }>
-                                                    <span className={classes.maskCH}>成人口罩數量</span>
-                                                    <span className={classes.maskEN}>
-                                                        {item.properties.mask_adult}<span className={classes.maskCH} style={{ display: 'inline', fontWeight: 'normal' }}>&nbsp;片</span>
-                                                    </span>
-                                                </div>
-                                                <div
-                                                    className={classNames(classes.col,
-                                                        classes.childrenMaskQuantity,
-                                                        `${item.properties.mask_child > 50 && classes.fullMask}`,
-                                                        `${item.properties.mask_child <= 50 && item.properties.mask_child > 0 && classes.fewMask}`,
-                                                        `${item.properties.mask_child === 0 && classes.emptyMask}`)}
-                                                >
-                                                    <span className={classes.maskCH}>兒童口罩數量</span>
-                                                    <span className={classes.maskEN}>
-                                                        {item.properties.mask_child}<span className={classes.maskCH} style={{ display: 'inline', fontWeight: 'normal' }}>&nbsp;片</span>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div className={`${item.properties.mask_adult > 50 ? classes.drugInfoDivClose : classes.drugInfoDivOpen}`}>
-                                                <div className={classes.drugInfoDescription}>
-                                                    <span className={classes.drugInfoTitle}>{item.properties.name}</span>
-                                                    {/* <span className={classes.drugInfoTitleDis}>1.2km</span>
-                                                    <Button variant="contained" className={classes.drugInfoOpen} disabled>
-                                                        營業中
-                                                    </Button> */}
-                                                    <Button variant="contained" className={classes.drugInfoClose} disabled>
-                                                        藥局資訊詳見地圖
-                                                    </Button>
-                                                </div>
-                                            </div>
-                                            <div className={classNames(classes.flex, classes.drugInfoDescription)}>
-                                                <div className={classNames(classes.col, classes.infoDescription)}>
-                                                    <span>地址&nbsp;&nbsp;</span>
-                                                    <span>{item.properties.address}</span>
-                                                </div>
-                                                <div className={classNames(classes.col, classes.aHref)}>
-                                                    <a href={googleMap + item.properties.name} rel="noopener noreferrer" target="_blank">於地圖查看</a>
-                                                </div>
-                                            </div>
-                                            <div className={classNames(classes.flex)}>
-                                                <div className={classNames(classes.col, classes.infoDescription)}>
-                                                    <span>電話&nbsp;&nbsp;</span>
-                                                    <span>{item.properties.phone}</span>
-                                                </div>
-                                                <div className={classNames(classes.col, classes.aHref)}>
-                                                    <a href={tel + item.properties.phone}>撥打電話</a>
-                                                </div>
-                                            </div>
-                                        </CardContent>
-                                    </Card>
-                                ))}
+                            <div>
+                                {searchMaskInformationLists[0].error
+                                ?
+                                    <div className={classes.nonList}>
+                                        <span role="img" aria-label="">查無此資料</span>
+                                        <br />
+                                        <span role="img" aria-label="">❗請重新輸入區域、地址或藥局❗</span>
+                                    </div>
+                                :
+                                    <div className={classes.flex}>
+                                        {searchMaskInformationLists.map((item, index) => (
+                                            <Card
+                                                className={classNames(classes.col, classes.card, "card_shadow")}
+                                                key={item.properties.id}
+                                                // onClick={(e) => this.handleClick(item.properties.id, e)}
+                                                onClick={(e) => this.props.handleDrugstoreClicked(item.properties.id, index)}
+                                            >
+                                                <CardContent>
+                                                    <div className={classes.flex}>
+                                                        <div
+                                                            className={classNames(classes.col,
+                                                                classes.adultMaskQuantity,
+                                                                `${item.properties.mask_adult > 50 && classes.fullMask}`,
+                                                                `${item.properties.mask_adult <= 50 && item.properties.mask_adult > 0 && classes.fewMask}`,
+                                                                `${item.properties.mask_adult === 0 && classes.emptyMask}`)
+                                                            }>
+                                                            <span className={classes.maskCH}>成人口罩數量</span>
+                                                            <span className={classes.maskEN}>
+                                                                {item.properties.mask_adult}<span className={classes.maskCH} style={{ display: 'inline', fontWeight: 'normal' }}>&nbsp;片</span>
+                                                            </span>
+                                                        </div>
+                                                        <div
+                                                            className={classNames(classes.col,
+                                                                classes.childrenMaskQuantity,
+                                                                `${item.properties.mask_child > 50 && classes.fullMask}`,
+                                                                `${item.properties.mask_child <= 50 && item.properties.mask_child > 0 && classes.fewMask}`,
+                                                                `${item.properties.mask_child === 0 && classes.emptyMask}`)}
+                                                        >
+                                                            <span className={classes.maskCH}>兒童口罩數量</span>
+                                                            <span className={classes.maskEN}>
+                                                                {item.properties.mask_child}<span className={classes.maskCH} style={{ display: 'inline', fontWeight: 'normal' }}>&nbsp;片</span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div className={`${item.properties.mask_adult > 50 ? classes.drugInfoDivClose : classes.drugInfoDivOpen}`}>
+                                                        <div className={classes.drugInfoDescription}>
+                                                            <span className={classes.drugInfoTitle}>{item.properties.name}</span>
+                                                            {/* <span className={classes.drugInfoTitleDis}>1.2km</span>
+                                                            <Button variant="contained" className={classes.drugInfoOpen} disabled>
+                                                                營業中
+                                                            </Button> */}
+                                                            <Button variant="contained" className={classes.drugInfoClose} disabled>
+                                                                藥局資訊詳見地圖
+                                                            </Button>
+                                                        </div>
+                                                    </div>
+                                                    <div className={classNames(classes.flex, classes.drugInfoDescription)}>
+                                                        <div className={classNames(classes.col, classes.infoDescription)}>
+                                                            <span>地址&nbsp;&nbsp;</span>
+                                                            <span>{item.properties.address}</span>
+                                                        </div>
+                                                        <div className={classNames(classes.col, classes.aHref)}>
+                                                            <a href={googleMap + item.properties.name} rel="noopener noreferrer" target="_blank">於地圖查看</a>
+                                                        </div>
+                                                    </div>
+                                                    <div className={classNames(classes.flex)}>
+                                                        <div className={classNames(classes.col, classes.infoDescription)}>
+                                                            <span>電話&nbsp;&nbsp;</span>
+                                                            <span>{item.properties.phone}</span>
+                                                        </div>
+                                                        <div className={classNames(classes.col, classes.aHref)}>
+                                                            <a href={tel + item.properties.phone}>撥打電話</a>
+                                                        </div>
+                                                    </div>
+                                                </CardContent>
+                                            </Card>
+                                        ))}
+                                    </div>
+                                }
                             </div>
                         }
                         <div className={classes.isloading}>

@@ -48,7 +48,10 @@ const maskGetSearchList = (action$) =>
                     const lists = response.features;
                     const updateTime = response.features[0].properties.updated;
                     const matchLists = lists.filter(list => list.properties.address.indexOf(searchText) !== -1 || list.properties.name.indexOf(searchText) !== -1);
-                    // console.log(matchLists);
+                    if(matchLists.length === 0) {
+                        matchLists.push({error: 'error'});
+                    }
+                    console.log(matchLists);
                     return of(
                         actions.recieveSearchMaskInformation(matchLists, updateTime),
                         actions.maskInformationIsLoading(false),
